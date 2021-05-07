@@ -74,3 +74,27 @@
 * NEW: In addition to the focus buttons, you can now use the LEFT knob to change the transform when setting a MATH operation.
 * FIX: On some power supplies the ER-101 might leak a 366Hz tone on to the power rails. The reason was that the PWM frequency for the orange LEDs was mistakenly set to audio range (366Hz) and below the cutoff frequency of the ER-101's power filter. The fix was to set the PWM frequency to 200kHz, well above the cutoff frequency on the power filter for the ER-101.
 * FIX: The ER-101 might freeze when you set LOOP points in a sequence with all steps having zero DURATION. This has been fixed now.
+
+# v1.08
+* FIX: Turning on smooth for a single step's CV-B causes the output voltage to increase for that step.
+* NEW: Hold down the COPY button to select a range of patterns or steps for copying to the clipboard.
+
+# v1.07
+* NEW: Pressing DELETE while in MATH mode clears the current transformation.
+* FIX: Copying a sequence ends with the first empty pattern encountered when it should copy the empty pattern and continue.
+* FIX: If a loop start or end step is deleted the the loop point might appear randomly again when inserting a new step.
+* FIX: Keep the focus track when loading a snapshot rather than setting it back to track #1.
+* NEW: Add confirmation to SAVE snapshot button.
+* NEW: Time quantization of RESET and COMMIT button pushes to next STEP or next PATTERN or next TRACK LOOP. Just hold down the STEP, PATTERN, or TRACK button when pressing either RESET or COMMIT.
+
+# v1.06
+* FIX: Even though the max number of patterns was increased to 400, only 255 could be used due to the use of a byte to address into the pattern memory pool. With this bug fix now the full 400 patterns are addressable and the max # of steps is increased to 2000.
+* FIX: Sometimes the COPY (and a few others) button will stop responding.
+
+# v1.05
+* FIX: Copying and inserting steps on the edit cursor while a sequence is playing sometimes results in incorrect step display values for the play cursor.
+* FIX: When copying tracks the user voltage tables are not being copied.
+* FIX: SMOOTH flags are not copied when using COPY and INSERT buttons.
+* FIX: Loop points are not copied when copying a track.
+* FIX: Should TILT when trying to change step parameters in follow mode and unpaused.
+* FIX: When copying patterns, if pattern memory is exhausted, new pattern creation will fail but the steps will still be copied into the current focused pattern. Steps should not be copied.
