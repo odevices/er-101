@@ -1,1 +1,1 @@
-# ER-101: Indexed Quad Sequencer
+# ER-101 Indexed Quad Sequencer
