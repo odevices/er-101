@@ -2,8 +2,9 @@
 * FIX: A bug fix.  Relevant to users and developers.
 * NEW: A new feature. Relevant to users and developers.
 * SYS: A system-level change.  Usually only relevant to developers.
+* vN.NN*: Only releases marked with an asterik are relevant to ER-102 users.
 
-# v2.09
+# v2.09*
 * FIX: While in HOLD mode, pressing COMMIT when the COPY LED is flashing would cause corruption of the sequence and eventually a crash.
 * FIX: There was no de-bouncing when sending button events to the ER-102.
 
