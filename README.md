@@ -30,3 +30,7 @@ make firmware
 ```
 
 The flash-able HEX file will be written to `release/avr32/firmware`.
+
+## Helpful AVR32 References
+
+* https://hofmeyr.de/avr32%20hello%20world/
