@@ -1,3 +1,17 @@
+## ignored folders
+
+# vscode
+.vscode/
+
+# build folders
+testing/
+release/
+debug/
+
+tmp/
+
+## C/C++ specific
+
 # Prerequisites
 *.d
 
@@ -7,18 +21,10 @@
 *.o
 *.obj
 
-# Precompiled Headers
-*.gch
-*.pch
-
 # Compiled Dynamic libraries
 *.so
 *.dylib
 *.dll
-
-# Fortran module files
-*.mod
-*.smod
 
 # Compiled Static libraries
 *.lai
@@ -30,3 +36,10 @@
 *.exe
 *.out
 *.app
+*.elf
+
+# Packages
+*.pkg
+
+# OSX
+.DS_Store
