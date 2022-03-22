@@ -2,7 +2,7 @@
 # testing | release | debug
 PROFILE ?= release
 ARCH = avr32
-FIRMWARE_VERSION = 3.0
+FIRMWARE_VERSION = 2.10
 
 scriptname := $(word 1, $(MAKEFILE_LIST))
 scriptname := $(scriptname:scripts/%=%)

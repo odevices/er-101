@@ -20,7 +20,7 @@ cd avr32-gnu-toolchain-linux_x86_64/bin
 ./avr32-gcc --version
 ```
 
-If you decide to install the toolchain in another location then you will need to edit `avr32.mk` to reflect your chosen location.
+If you decide to install the toolchain in another location then you will need to edit `scripts/avr32.mk` to reflect your chosen location.
 
 ## Compilation
 
@@ -29,7 +29,7 @@ cd {project-root}
 make firmware
 ```
 
-The flash-able HEX file will be written to `release/avr32/firmware`.
+The flash-able HEX file will be written to `release/avr32/er-101-firmware-{version}.hex`.
 
 ## Helpful AVR32 References
 

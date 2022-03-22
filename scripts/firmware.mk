@@ -1,7 +1,7 @@
 include scripts/env.mk
 include scripts/utils.mk
 
-program_name := firmware
+program_name := er-101-firmware-$(FIRMWARE_VERSION)
 out_dir := $(build_dir)/$(program_name)
 src_dirs := src $(asf_dir) 
 
@@ -43,29 +43,29 @@ CFLAGS += -DFIRMWARE_VERSION=\"$(FIRMWARE_VERSION)\"
 CFLAGS += -DBUILD_PROFILE=\"$(PROFILE)\"
 LFLAGS = $(LFLAGS.$(ARCH))
 
-all: $(out_dir)/$(program_name).hex
+all: $(build_dir)/$(program_name).hex
 
 $(objects): scripts/env.mk
 
 # Final linking of the ELF executable.
-$(out_dir)/$(program_name).elf: $(objects) $(libraries)
+$(build_dir)/$(program_name).elf: $(objects) $(libraries)
 	@mkdir -p $(@D)	
 	@echo $(describe_env) LINK $(describe_target)
 	@$(LD) $(CFLAGS) -o $@ $(objects) $(libraries) $(LFLAGS)
 	
 # Strip the executable down to a memory-loadable binary.
-$(out_dir)/$(program_name).hex: $(out_dir)/$(program_name).elf
+$(build_dir)/$(program_name).hex: $(build_dir)/$(program_name).elf
 	@echo $(describe_env) OBJCOPY $(describe_target)
 	@mkdir -p $(@D)
 	@$(SIZE) $<
 	@$(OBJCOPY) -O ihex -R .eeprom -R .fuse -R .lock -R .signature $< $@
 
 clean:
-	rm -rf $(out_dir)
+	rm -rf $(out_dir) $(program_name).*
 
 # Look up the source file and line that corresponds to an address in the binary exe.
-addr2line: $(out_dir)/$(program_name).elf
-	@echo $(describe_env) Find ${ADDRESS} in $(out_dir)/$(program_name).elf
-	@$(ADDR2LINE) -p -f -i -C -e $(out_dir)/$(program_name).elf -a $(ADDRESS)
+addr2line: $(build_dir)/$(program_name).elf
+	@echo $(describe_env) Find ${ADDRESS} in $(build_dir)/$(program_name).elf
+	@$(ADDR2LINE) -p -f -i -C -e $(build_dir)/$(program_name).elf -a $(ADDRESS)
 
 include scripts/rules.mk
