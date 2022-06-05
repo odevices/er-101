@@ -2,7 +2,6 @@
 
 # vscode
 .vscode/
-
 # build folders
 testing/
 release/
@@ -30,6 +29,7 @@ tmp/
 *.lai
 *.la
 *.a
+!libdsp-at32ucr3fp-dspspeed_opt.a
 *.lib
 
 # Executables
