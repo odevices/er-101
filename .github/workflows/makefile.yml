@@ -14,7 +14,15 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
+    - name: Cache toolchain
+      id: cache-toolchain
+      uses: actions/cache@v3
+      with:
+        path: ~/microchip
+        key: ${{ runner.os }}-toolchain
+
     - name: Install toolchain
+      if: steps.cache-toolchain.outputs.cache-hit != 'true'
       run: bash scripts/install-toolchain.sh
       
     - name: Build firmware
