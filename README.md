@@ -2,9 +2,7 @@
 
 This repo contains the source code for the ER-101 firmware.
 
-## Toolchain Installation
-
-These instructions assume that you developing on a 64-bit linux host OS.
+## Toolchain Installation (64-bit linux host)
 
 `scripts/install-toolchain.sh` will install the toolchain to `~/microchip`. 
 
