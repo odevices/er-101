@@ -189,6 +189,7 @@ typedef struct
 
 STATIC_ASSERT(sizeof(sequencer_data_t) == 4 + sizeof(transform_t) + NUM_TRACKS * sizeof(track_t) + sizeof(pattern_pool_t) + sizeof(step_pool_t), sequencer_data_t_is_wrong_size);
 STATIC_ASSERT(sizeof(sequencer_data_t) < SNAPSHOT_SIZE, sequencer_data_bigger_than_snapshot);
+STATIC_ASSERT(SNAPSHOT_SIZE * NUM_SNAPSHOTS < AVR32_FLASH_SIZE, snapshots_bigger_than_flash);
 
 #define STEP(data, id) (data->steps.pool[id])
 #define PATTERN(data, id) (data->patterns.pool[id])
