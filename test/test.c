@@ -20,4 +20,5 @@ int main() {
     printf("running tests...\n");
 
     printf("sizeof(sequencer_state_t): %lu\n", sizeof(sequencer_data_t));
+    printf("SNAPSHOT_SIZE * NUM_SNAPSHOTS: %d\n", SNAPSHOT_SIZE * NUM_SNAPSHOTS);
 }
