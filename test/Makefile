@@ -1,3 +1,3 @@
 
 test: test.c
-	gcc test.c -o test
+	gcc -I../src/ test.c -o test
